@@ -1,4 +1,5 @@
 import React from "react";
+import { PRODUCTS } from "../../products";
 
 function Shop() {
   return (
