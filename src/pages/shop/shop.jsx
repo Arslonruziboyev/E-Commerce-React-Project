@@ -6,6 +6,7 @@ function Shop() {
       <div className="shopTitle">
         <h1>Aslan Shop</h1>
       </div>
+      <div className="products"></div>
     </div>
   );
 }
