@@ -1,4 +1,5 @@
 import React from "react";
+import "./shop.css";
 
 function Product(props) {
   const { id, productName, price, productImage } = props.data;
@@ -9,7 +10,7 @@ function Product(props) {
         <p>
           <b>{productName}</b>
         </p>
-        <p>{price}</p>
+        <p>${price}</p>
       </div>
     </div>
   );
