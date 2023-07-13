@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import { ShopContext } from "../../context/shop-context";
 import "./shop.css";
 
 function Product(props) {
   const { id, productName, price, productImage } = props.data;
+  const { addToCart } = useState(ShopContext);
   return (
     <div className="product">
       <img src={productImage} />
@@ -13,7 +14,9 @@ function Product(props) {
         </p>
         <p>${price}</p>
       </div>
-      <button className="addToCartBttn">Add To Cart</button>
+      <button className="addToCartBttn" onClick={() => addToCart()}>
+        Add To Cart
+      </button>
     </div>
   );
 }
