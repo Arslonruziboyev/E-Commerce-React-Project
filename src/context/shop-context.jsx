@@ -3,14 +3,17 @@ import { PRODUCTS } from "../products";
 
 const getDefaultCart = () => {
   let cart = {};
-  for (let i = 1; i < PRODUCTS.length; i++) {
+  for (let i = 1; i < PRODUCTS.length + 1; i++) {
     cart[i] = 0;
   }
   return cart;
 };
 export const ShopContext = createContext(null);
 export const ShopContextProvider = (props) => {
-  const [cartItems, setCartItems] = useState();
+  const [cartItems, setCartItems] = useState(getDefaultCart());
+  const addToCart = (itemId) => {
+    setCartItems((prev) => ({ ...prev, [itemId]: prev[itemId] + 1 }));
+  };
 
   return <ShopContext.Provider>{props.children}</ShopContext.Provider>;
 };
