@@ -1,4 +1,5 @@
 import React from "react";
+import { ShopContext } from "../../context/shop-context";
 import "./shop.css";
 
 function Product(props) {
