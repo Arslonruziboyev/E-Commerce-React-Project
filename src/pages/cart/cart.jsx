@@ -1,9 +1,10 @@
 import React, { useContext } from "react";
 import { PRODUCTS } from "../../products";
 import { ShopContext } from "../../context/shop-context";
+import { CartItem } from "./cart-item";
 
 function Cart() {
-  const { cartItem } = useContext(ShopContext);
+  const { cartItems } = useContext(ShopContext);
   return (
     <div className="cart">
       <div>
@@ -11,7 +12,7 @@ function Cart() {
       </div>
       <div className="cartItem">
         {PRODUCTS.map((product) => {
-          if (cartItem[product.id] !== 0) {
+          if (cartItems[product.id] !== 0) {
             return <CartItem data={product} />;
           }
         })}
